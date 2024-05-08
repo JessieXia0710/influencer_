@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Influencer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/post.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="main-container">
+        <div class="chat-container">
+            <div class="message a">Hey, Claire.</div>
+            <div class="message b">Hey honey, how's it going?</div>
+        </div>
+    </div>
+
+    <div class="guidance">
+        <h3>*click anywhere on the screen to continue the chat*</h3>
+    </div>
+
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var
+            chatContainer = document.querySelector(".chat-container");
+        var messages = ["send1", "receive1", "send2", "receive2", "send3", "receive3", "send4", "receive4", "send5", "receive5", "send6", "receive6", "send7", "receive7", "send8", "receive8"];
+
+        function scrollToBottom() {
+            var messages = document.querySelectorAll('.message');
+            var lastMessage = messages[messages.length - 1];
+            lastMessage.scrollIntoView();
+        }
+
+        var
+            messageIndex = 0; chatContainer.addEventListener("click", function () {
+                if (messageIndex < messages.length) {
+                    var
+                        messageContent = messages[messageIndex]; if (messageIndex % 2 === 0) {
+                            var
+                                aMessage = document.createElement("div"); aMessage.textContent = messageContent;
+                            aMessage.classList.add("message", "a"); chatContainer.appendChild(aMessage);
+                        } else {
+                        var
+                            bMessage = document.createElement("div"); bMessage.textContent = messageContent;
+                        bMessage.classList.add("message", "b"); chatContainer.appendChild(bMessage);
+                    }
+                    messageIndex++;
+
+                    scrollToBottom();
+                } else { alert("chat ends"); }
+            });
+    });
+
+</script>
+
+</html>

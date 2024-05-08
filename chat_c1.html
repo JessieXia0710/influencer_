@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Influencer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/post.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="main-container">
+        <div class="chat-container">
+            <div class="message a">Hey, babe, can we talk?</div>
+            <div class="message b">Sure, what happens?</div>
+        </div>
+    </div>
+
+    <div class="textbox" id="myTextBox">
+        <div class="textbox-content">
+            <h3>
+                You decide to:
+            </h3>
+        </div>
+        <a href="browser_reject.html">
+            <div class="choice" style="position: fixed; bottom: 60px; right: 10px; color:#7FA8B4;">
+                follow your boyfriend's suggestion, rejecting Ava's advice
+            </div>
+        </a>
+        <a href="chat_d.html">
+            <div class="choice" style="position: fixed; bottom: 0; right: 10px; color:#7FA8B4;">
+                follow Ava's advice, and talk with your agent
+            </div>
+        </a>
+    </div>
+
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var nextText = document.querySelector("#next-text");
+        var chatContainer = document.querySelector(".chat-container");
+
+        var messages = [
+            "Well, you know how I've been struggling with my social media lately, right?",
+            "Yeah, I've noticed. Is everything okay?",
+            "Not really. I think I should fake a breakup to boost my engagement.",
+            "Wait, what? That's ridiculous! You can't just lie to your followers like that.",
+            "I know, I know. I'm not sure whether it's right, but I feel like I'm running out of options.",
+            "You can't just lie to your followers like that. You built your platform on authenticity, remember? You can't just throw that away for a few more likes.",
+            "I know... But the pressure is just so overwhelming sometimes.",
+            "I get that, I really do. But trust me, being honest is always the better choice.",
+            "Well, you said it right. Please give me some time to rethink this.",
+            "Exactly. I'm here for you, no matter what. We'll figure this out together.",
+        ];
+        for (var i = 0; i < messages.length; i++) {
+            var message = document.createElement('div');
+            message.classList.add('message');
+            if (i % 2 === 0) {
+                message.classList.add('a');
+            } else {
+                message.classList.add('b');
+            }
+            message.textContent = messages[i];
+            chatContainer.appendChild(message);
+        }
+
+        scrollToBottom();
+
+        function scrollToBottom() {
+            var messages = document.querySelectorAll('.message');
+            var lastMessage = messages[messages.length - 1];
+            lastMessage.scrollIntoView();
+        }
+
+    });
+
+</script>
+
+</html>

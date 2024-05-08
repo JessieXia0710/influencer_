@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Influencer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="click_anywhere"
+        style="position: fixed; top:50%; left: 50%; transform: translate(-50%, -50%);font-size: 16px;color:#666">
+        <h4>*Click anywhere to continue*</h4>
+    </div>
+
+
+    <script>
+        function addImage() {
+            var clickCount = document.querySelectorAll('.image').length;
+            if (clickCount < 9) {
+                var positions = [
+                    { x: 100, y: 80 },
+                    { x: window.innerWidth - 630, y: 20 },
+                    { x: 150, y: 350 },
+                    { x: window.innerWidth - 600, y: 450 },
+                    { x: 90, y: 600 },
+                    { x: window.innerWidth - 680, y: 100 },
+                    { x: 200, y: 550 },
+                    { x: window.innerWidth - 700, y: window.innerHeight - 300 },
+                    { x: 250, y: window.innerHeight - 600 }
+                ];
+                var position = positions[clickCount];
+                var image = new Image();
+                image.src = "images/forum-" + (clickCount + 1) + ".png";
+                image.classList.add("image");
+                image.style.position = "absolute";
+                image.style.top = position.y + "px";
+                image.style.left = position.x + "px";
+                document.body.appendChild(image);
+            } else if (clickCount === 9) {
+                var button = document.createElement("button");
+                button.innerHTML = "Click to continue";
+                button.style.position = "fixed";
+                button.style.transform = "translate(-50%, -50%)";
+                button.style.top = "50%";
+                button.style.left = "50%";
+                document.body.appendChild(button);
+                button.classList.add("my-button-class");
+                button.style.backgroundColor = "pink";
+                button.style.color = "white";
+                button.style.padding = "10px 20px";
+                button.style.border = "none";
+                button.style.borderRadius = "5px";
+                button.style.cursor = "pointer";
+                button.addEventListener("mouseover", function () {
+                    button.style.backgroundColor = "#D8BFD8";
+                });
+                button.addEventListener("mouseout", function () {
+                    button.style.backgroundColor = "pink";
+                });
+                button.addEventListener("click", function () {
+                    window.location.href = "forum_a.html";
+                });
+            }
+        }
+
+        window.addEventListener("resize", function () {
+            document.body.style.height = window.innerHeight + "px";
+        });
+
+        document.addEventListener("click", addImage);
+    </script>
+</body>
+
+<style>
+    .image {
+        height: 400px;
+        width: auto;
+    }
+</style>
+
+</html>

@@ -1,0 +1,32 @@
+body {
+    height: 100vh;
+    background-color: #F0C3D3;
+}
+
+.next {
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    color: #EFA7A7;
+    font-size: 30px;
+    animation: arrow 1s infinite;
+}
+
+.next:hover {
+    color: tomato;
+    /* change the color as you intend */
+}
+
+@keyframes arrow {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
