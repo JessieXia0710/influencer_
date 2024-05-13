@@ -27,17 +27,13 @@
         </div>
     </div>
 
-    <div class="guidance">
-        <h3>*click anywhere on the screen to continue the chat*</h3>
-    </div>
-
     <a href="publish_a.html">
         <div class="next" style="position: fixed; bottom: 10%; right: 450px; display:none">
             ⮕
         </div>
     </a>
 
-    <button id="next-text">Click here!</button>
+    <button id="next-text">►</button>
 
 </body>
 
@@ -71,7 +67,7 @@
 
                 scrollToBottom();
             } else {
-                nextText.innerHTML = "Chat ends.";
+                nextText.innerHTML = "⏯";
 
                 var arrow = document.querySelector(".next");
                 arrow.style.display = "block";

@@ -13,10 +13,10 @@ a {
 }
 
 body {
-    height: 100vh;
+    height: calc(100vh - 3rem);
+    padding-bottom: 3rem;
     background-color: #F0C3D3;
     color: #262626;
-    padding-bottom: 3rem;
 }
 
 img {
@@ -217,6 +217,7 @@ img {
 .profile-real-name,
 .profile-stat-count {
     font-weight: 600;
+    font-family: Arial, sans-serif;
 }
 
 /* Gallery Section */
@@ -477,9 +478,13 @@ Remove or comment-out the code block below to see how the browser will fall-back
     font-size: 15px;
 }
 
+
 .post-content {
     font-size: 15px;
+    line-height: 110%;
+    margin: -5px auto;
 }
+
 
 .top {
     font-size: 20px;
@@ -501,7 +506,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 .message {
     border-radius: 5px;
     padding: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
     position: relative;
     max-width: 80%;
 }
@@ -510,22 +515,21 @@ Remove or comment-out the code block below to see how the browser will fall-back
     background-color: #F2DEDD;
     align-self: flex-start;
     top: 10px;
-    left: 60px;
+    left: 50px;
     font-family: "Roboto Mono", monospace;
     font-size: 18px;
     color: #6C5B7B;
-    margin-bottom: 5px;
+
 }
 
 .message.b {
     background-color: #B1C7D2;
     align-self: flex-end;
-    left: 20px;
+    left: 0px;
     top: 10px;
     font-family: "Roboto Mono", monospace;
     font-size: 18px;
     color: #4A6F82;
-    margin-bottom: 5px;
 }
 
 .choice {
@@ -556,17 +560,21 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
 #next-text {
     position: fixed;
-    left: 50px;
-    top: 50%;
+    left: 50%;
+    top: 88%;
+    height: 50px;
+    width: 50px;
+    transform: translate(-50%, -50%);
     font-size: 30px;
-    color: tomato;
+    color: #F4ACB7;
     cursor: pointer;
     transition: color 0.3s ease, transform 0.3s ease;
+    border: none;
+    border-radius: 50%;
 }
 
 #next-text:hover {
-    color: #37ccd7;
-    transform: scale(1.1);
+    color: #7FA8B4;
 }
 
 .notification {

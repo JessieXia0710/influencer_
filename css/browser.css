@@ -372,3 +372,18 @@ input[type=text] {
     margin-left: 10px;
     margin-top: 5px;
 }
+
+.replay {
+    font-family: "jersey 15", sans-serif;
+    font-size: 30px;
+    margin-left: 20px;
+    color: #F4ACB7;
+}
+
+.replay:hover {
+    color: #7FA8B4;
+}
+
+a {
+    text-decoration: none;
+}
